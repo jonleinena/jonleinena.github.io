@@ -1,0 +1,195 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.navbar {
+  position: fixed;
+  width: 100vw;
+  background-color: #ffffff;
+  transition: 0.2s;
+  display: flex;
+  z-index: 9999;
+}
+.floatingNav {
+  border-radius: 2px;
+  box-shadow: 0px 1px 10px #999;
+}
+.navbar-brand {
+  margin-right: 25%;
+}
+.navbar-brand #logo {
+  margin-left: 15%;
+  height: 80px;
+}
+.body {
+  background-color: white;
+}
+#hola {
+  display: grid;
+  place-items: center;
+  margin-top: 10em;
+}
+#Jon {
+  height: 65vh;
+  margin-top: 2%;
+}
+.formacion,
+.conocimientos,
+.idiomas,
+.experiencia,
+.sobre-mi,
+#contact {
+  margin-top: 10em;
+  text-align: center;
+  width: 100%;
+}
+.formacion h2,
+.conocimientos h2,
+.idiomas h2,
+.experiencia h2,
+.sobre-mi h2,
+#contact h2 {
+  padding-top: 125px;
+  margin-bottom: 1.5em;
+}
+.idiomas h2 {
+  margin-top: 5em;
+}
+.texto {
+  display: grid;
+  place-items: center;
+  margin-top: 0;
+  margin-bottom: 3em;
+}
+.texto p {
+  max-width: 75ch;
+  font-size: larger;
+  text-justify: inter-word;
+}
+.elem-container,
+.conocimiento-wrapper,
+#idiomas-container,
+.elem-container-trabajo,
+.images-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.elem {
+  margin-left: 2.5%;
+  width: 40%;
+  height: 350px;
+  background-color: white;
+  border-radius: 25px;
+  border: 1px solid #979995;
+  padding: 20px;
+}
+.elem img {
+  margin-top: 8%;
+  margin-bottom: 5%;
+  max-height: 158px;
+  max-width: 70%;
+}
+.elem a {
+  margin-right: 5%;
+  text-decoration: none;
+  color: black;
+  font-weight: 250;
+}
+.conocimientos {
+  margin-top: 10em;
+}
+.conocimiento {
+  flex: 0 1 150px;
+  margin: 2em 5em;
+}
+.conocimiento img {
+  height: 120px;
+  margin: 3em 1em;
+}
+.idiomas {
+  margin-top: 5em;
+}
+#idiomas-container .idioma {
+  flex: 0 1 150px;
+  margin: 1em 10em;
+  width: 30%;
+}
+.idioma img {
+  height: 170px;
+}
+
+.job-elem {
+  display: grid;
+  grid-template-columns: minmax(150px, 25%) 1fr;
+}
+.job-elem img {
+  max-width: 150px;
+  margin-top: 2em;
+  margin-left: 2em;
+  margin-right: 4em;
+}
+.job-elem #texto {
+  display: grid;
+  place-items: center;
+}
+.job-elem #texto p {
+  max-width: 65ch;
+  text-justify: inter-word;
+  text-align: start;
+}
+.job-elem #texto h4 {
+  margin-left: -4ch;
+  margin-bottom: 1em;
+}
+.sobre-mi img {
+  height: 170px;
+  margin: 0.5em;
+  filter: grayscale(100%);
+}
+.sobre-mi img:hover {
+  filter: none;
+}
+#contact img {
+  height: 150px;
+  margin-bottom: 5em;
+}
+
+@media screen and (max-width: 600px) {
+  #Jon {
+    height: 50vh;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .job-elem {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .job-elem #imagen {
+    max-width: 200px;
+    margin-bottom: 30px;
+  }
+  .job-elem #texto {
+    max-width: 75ch;
+    font-size: larger;
+    text-justify: inter-word;
+    text-align: center;
+  }
+  .job-elem h4 {
+    max-width: 40ch;
+  }
+}
