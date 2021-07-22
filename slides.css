@@ -1,0 +1,263 @@
+header {
+  background-color: whitesmoke;
+  height: 4em;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  padding: 2em 2em 0em 2em;
+  z-index: 10;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+}
+header a {
+  text-decoration: none;
+  color: black;
+  float: right;
+}
+.sobreMi {
+  height: 90.1vh;
+  display: grid;
+  grid-template-columns: minmax(150px, 42%) 1fr;
+  padding-left: 2em;
+  padding-right: 3em;
+  background-color: rgb(120, 132, 138);
+}
+.pic {
+  display: grid;
+  place-items: center;
+}
+.pic img {
+  max-width: 30em;
+  text-align: center;
+  border: 1px;
+  padding: 3em;
+  background-color: rgb(139, 154, 160);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.text {
+  text-align: center;
+  padding-top: 20%;
+  font-family: "Poppins", sans-serif;
+}
+.text h2 {
+  font-weight: 800;
+  font-size: 300%;
+  padding-bottom: 5%;
+  color: azure;
+}
+.text p {
+  max-width: 75ch;
+  font-size: larger;
+  text-justify: inter-word;
+  padding-left: 10%;
+  color: azure;
+}
+.text a {
+  text-decoration: none;
+  font-weight: bold;
+  color: azure;
+}
+
+/*arrows*/
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  margin-left: 1em;
+  margin-right: 1em;
+  padding: 0;
+  border: none;
+  background: none;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  font-size: 32px;
+}
+
+/* timeline */
+.certificados {
+  display: none;
+}
+.certificados h2 {
+  font-family: "Poppins", sans-serif;
+
+  font-weight: 800;
+  color: #fff;
+  float: left;
+  padding: 2em 0 0 5em;
+  font-size: 300%;
+}
+
+body {
+  background-color: #2c2c2c;
+  min-height: 90.1vh;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+.vertical {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 50%;
+  bottom: 0px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 4px;
+  background-color: whitesmoke;
+}
+
+body .entries {
+  width: calc(100% - 80px);
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+  left: -5px;
+}
+body .entries .entry {
+  width: calc(50% - 80px);
+  float: left;
+  padding: 20px;
+  clear: both;
+  text-align: right;
+}
+body .entries .entry:not(:first-child) {
+  margin-top: -60px;
+}
+body .entries .entry .title {
+  font-size: 32px;
+  margin-bottom: 12px;
+  position: relative;
+  color: #fff;
+}
+body .entries .entry .title:before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 4px solid #ffffff;
+  background-color: #2c2c2c;
+  border-radius: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: -73px;
+  z-index: 1000;
+}
+body .entries .entry .title.big:before {
+  width: 24px;
+  height: 24px;
+  -webkit-transform: translate(8px, -50%);
+  transform: translate(8px, -50%);
+}
+body .entries .entry .body {
+  color: #aaa;
+}
+body .entries .entry .body p {
+  line-height: 1.4em;
+}
+body .entries .entry:nth-child(2n) {
+  text-align: left;
+  float: right;
+}
+body .entries .entry:nth-child(2n) .title:before {
+  left: -63px;
+}
+body .entries .entry:nth-child(2n) .title.big:before {
+  -webkit-transform: translate(-8px, -50%);
+  transform: translate(-8px, -50%);
+}
+
+/*tagCloud*/
+.capacities {
+  display: none;
+}
+
+/*images */
+.aficiones {
+  display: none;
+}
+.aficiones {
+  place-items: center;
+  padding-top: 5em;
+}
+.aficiones h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  font-size: 250%;
+}
+.images-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 65%;
+}
+.aficiones img {
+  height: 170px;
+  margin: 0.5em;
+  filter: grayscale(100%);
+}
+.aficiones img:hover {
+  filter: none;
+}
+
+/*contac*/
+.contacto {
+  display: none;
+}
+.contacto {
+  padding-left: 37%;
+  background-color: rgb(120, 132, 138);
+  height: 90.1vh;
+}
+.contacto .linea {
+  content: "";
+  position: fixed;
+  top: 25vh;
+  left: 35%;
+  bottom: 20vh;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 2px;
+  background-color: whitesmoke;
+}
+.contacto h2 {
+  padding-top: 15vh;
+  padding-left: 3%;
+  color: #fff;
+  font-weight: 800;
+  font-size: 250%;
+}
+.contacto ul {
+  margin-top: -10%;
+  color: #fff;
+  list-style: none;
+  font-size: 150%;
+  width: 30vw;
+}
+.contacto img {
+  max-width: 1em;
+  vertical-align: middle;
+}
+.contacto a {
+  text-decoration: none;
+  color: #fff;
+}
