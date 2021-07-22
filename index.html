@@ -29,11 +29,7 @@
         return check;
       };
     </script>
-    <script>
-      if (window.desktopcheck()) {
-        alert("La web no está optimizada para dispositivos móviles.");
-      }
-    </script>
+
     <section id="presentacion">
       <span id="hola">Hola, soy</span>
       <h1>Jon Leiñena</h1>
@@ -42,7 +38,17 @@
         a conocerme. ¿Empezamos?
       </p>
       <div class="link-container">
-        <a href="slides.html">
+        <a href="#" id="abc">
+          <script>
+            if (window.desktopcheck()) {
+              alert("La web no está optimizada para dispositivos móviles.");
+              //document.getElementById("abc").setAttribute("href", "sup.html");
+            } /*else {
+              document
+                .getElementById("abc")
+                .setAttribute("href", "slides.html");
+            }*/
+          </script>
           <span>¡ADELANTE!</span>
           <img src="assets/flecha-derecha.svg" alt="Jon Leiñena" />
         </a>
