@@ -2,9 +2,7 @@ document.getElementById("div1").style.visibility = "hidden";
 
 var change = function changeVisibility() {
   document.getElementById("all").style.visibility = "hidden";
-  if (window.innerWidth > 1000) {
-    document.getElementById("div1").style.visibility = "visible";
-  }
+  document.getElementById("div1").style.visibility = "visible";
 };
 setTimeout(change, 4000);
 

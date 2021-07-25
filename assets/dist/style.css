@@ -73,11 +73,11 @@
 /* #div1 a:hover {border: 1px solid #eee; background: #000; } */
 
 #div1 .blue {
-  color: blue;
+  color: rgb(149, 169, 187);
 }
 
-#div1 .red {
-  color: red;
+#div1 .purple {
+  color: rgb(194, 151, 187);
 }
 
 #div1 .yellow {

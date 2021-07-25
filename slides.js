@@ -32,3 +32,9 @@ function showSlides(n) {
   */
   slides[slideIndex - 1].style.display = "grid";
 }
+
+if (slideIndex == 3 && window.innerWidth < 1000) {
+  alert(
+    "Para mejorar la experiencia en esta parte de la página consúltela desde un dispositivo con mayor tamaño."
+  );
+}
