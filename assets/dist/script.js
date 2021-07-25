@@ -1,9 +1,11 @@
-document.getElementById('div1').style.visibility = "hidden";
+document.getElementById("div1").style.visibility = "hidden";
 
 var change = function changeVisibility() {
-  document.getElementById('all').style.visibility = "hidden";
-  document.getElementById('div1').style.visibility = "visible";
-}
+  document.getElementById("all").style.visibility = "hidden";
+  if (window.innerWidth > 1000) {
+    document.getElementById("div1").style.visibility = "visible";
+  }
+};
 setTimeout(change, 4000);
 
 var radius = 200;
@@ -26,13 +28,13 @@ var howElliptical = 1;
 var aA = null;
 var oDiv = null;
 
-window.onload = function() {
+window.onload = function () {
   var i = 0;
   var oTag = null;
 
-  oDiv = document.getElementById('div1');
+  oDiv = document.getElementById("div1");
 
-  aA = oDiv.getElementsByTagName('a');
+  aA = oDiv.getElementsByTagName("a");
   // aA=document.getElementById('div2');
   // aA=oDiv.getElementsByTagName('span');
 
@@ -49,15 +51,15 @@ window.onload = function() {
 
   positionAll();
 
-  oDiv.onmouseover = function() {
+  oDiv.onmouseover = function () {
     active = true;
   };
 
-  oDiv.onmouseout = function() {
+  oDiv.onmouseout = function () {
     active = false;
   };
 
-  oDiv.onmousemove = function(ev) {
+  oDiv.onmousemove = function (ev) {
     var oEvent = window.event || ev;
 
     mouseX = oEvent.clientX - (oDiv.offsetLeft + oDiv.offsetWidth / 2);
@@ -93,14 +95,14 @@ function update() {
   sineCosine(a, b, c);
   for (var j = 0; j < mcList.length; j++) {
     var rx1 = mcList[j].cx;
-    var ry1 = mcList[j].cy * ca + mcList[j].cz * (-sa);
+    var ry1 = mcList[j].cy * ca + mcList[j].cz * -sa;
     var rz1 = mcList[j].cy * sa + mcList[j].cz * ca;
 
     var rx2 = rx1 * cb + rz1 * sb;
     var ry2 = ry1;
-    var rz2 = rx1 * (-sb) + rz1 * cb;
+    var rz2 = rx1 * -sb + rz1 * cb;
 
-    var rx3 = rx2 * cc + ry2 * (-sc);
+    var rx3 = rx2 * cc + ry2 * -sc;
     var ry3 = rx2 * sc + ry2 * cc;
     var rz3 = rz2;
 
@@ -110,7 +112,7 @@ function update() {
 
     per = d / (d + rz3);
 
-    mcList[j].x = (howElliptical * rx3 * per) - (howElliptical * 2);
+    mcList[j].x = howElliptical * rx3 * per - howElliptical * 2;
     mcList[j].y = ry3 * per;
     mcList[j].scale = per;
     mcList[j].alpha = per;
@@ -130,17 +132,15 @@ function depthSort() {
     aTmp.push(aA[i]);
   }
 
-  aTmp.sort(
-    function(vItem1, vItem2) {
-      if (vItem1.cz > vItem2.cz) {
-        return -1;
-      } else if (vItem1.cz < vItem2.cz) {
-        return 1;
-      } else {
-        return 0;
-      }
+  aTmp.sort(function (vItem1, vItem2) {
+    if (vItem1.cz > vItem2.cz) {
+      return -1;
+    } else if (vItem1.cz < vItem2.cz) {
+      return 1;
+    } else {
+      return 0;
     }
-  );
+  });
 
   for (i = 0; i < aTmp.length; i++) {
     aTmp[i].style.zIndex = i;
@@ -161,11 +161,9 @@ function positionAll() {
     aTmp.push(aA[i]);
   }
 
-  aTmp.sort(
-    function() {
-      return Math.random() < 0.5 ? 1 : -1;
-    }
-  );
+  aTmp.sort(function () {
+    return Math.random() < 0.5 ? 1 : -1;
+  });
 
   for (i = 0; i < aTmp.length; i++) {
     oFragment.appendChild(aTmp[i]);
@@ -178,7 +176,7 @@ function positionAll() {
       phi = Math.acos(-1 + (2 * i - 1) / max);
       theta = Math.sqrt(max * Math.PI) * phi;
     } else {
-      phi = Math.random() * (Math.PI);
+      phi = Math.random() * Math.PI;
       theta = Math.random() * (2 * Math.PI);
     }
     //×ø±ê±ä»»
@@ -186,8 +184,16 @@ function positionAll() {
     mcList[i - 1].cy = radius * Math.sin(theta) * Math.sin(phi);
     mcList[i - 1].cz = radius * Math.cos(phi);
 
-    aA[i - 1].style.left = mcList[i - 1].cx + oDiv.offsetWidth / 2 - mcList[i - 1].offsetWidth / 2 + 'px';
-    aA[i - 1].style.top = mcList[i - 1].cy + oDiv.offsetHeight / 2 - mcList[i - 1].offsetHeight / 2 + 'px';
+    aA[i - 1].style.left =
+      mcList[i - 1].cx +
+      oDiv.offsetWidth / 2 -
+      mcList[i - 1].offsetWidth / 2 +
+      "px";
+    aA[i - 1].style.top =
+      mcList[i - 1].cy +
+      oDiv.offsetHeight / 2 -
+      mcList[i - 1].offsetHeight / 2 +
+      "px";
   }
 }
 
@@ -195,10 +201,10 @@ function doPosition() {
   var l = oDiv.offsetWidth / 2;
   var t = oDiv.offsetHeight / 2;
   for (var i = 0; i < mcList.length; i++) {
-    aA[i].style.left = mcList[i].cx + l - mcList[i].offsetWidth / 2 + 'px';
-    aA[i].style.top = mcList[i].cy + t - mcList[i].offsetHeight / 2 + 'px';
+    aA[i].style.left = mcList[i].cx + l - mcList[i].offsetWidth / 2 + "px";
+    aA[i].style.top = mcList[i].cy + t - mcList[i].offsetHeight / 2 + "px";
 
-    aA[i].style.fontSize = Math.ceil(12 * mcList[i].scale / 2) + 8 + 'px';
+    aA[i].style.fontSize = Math.ceil((12 * mcList[i].scale) / 2) + 8 + "px";
 
     aA[i].style.filter = "alpha(opacity=" + 100 * mcList[i].alpha + ")";
     aA[i].style.opacity = mcList[i].alpha;
